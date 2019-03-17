@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="users">
+        <ol>
+          <li v-for="user in users">
+              <p>ID: {{ user.id }}</p>
+              <p>Name: {{ user.name }}</p>
+              <p>Email: {{ user.email }}</p>
+              <p>Perfil: {{ user.perfil.descricao }}</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+          users: [
+              {
+                id: 1,
+                name: 'Anselmo',
+                email: 'emai@anselmopfeifer.com',
+                perfil: {
+                  descricao: 'admin'
+                }
+              },
+              {
+                id: 2,
+                name: 'Pfeifer',
+                email: 'emai-2@anselmopfeifer.com',
+                perfil: {
+                  descricao: 'admin'
+                }
+              }
+            ]
+        }
+    });
+</script>
+</html>
